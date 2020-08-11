@@ -1,0 +1,24 @@
+<div class="row card-group">
+    <div class="col-3" *ngFor="let favorite of favorites">
+        <div class="card border-primary mt-3 shadow animated fadeIn">
+            <div class="card-header">
+                <div class="float-right">
+                    <button class="btn btn-sm btn-danger" (click)="remove(favorite)">
+                        <fa-icon [icon]="['fas', 'trash']" size="xs"></fa-icon>
+                    </button>
+                </div>
+
+                <div class="float-left">
+                    <button class="btn btn-sm btn-info" (click)="openDetailsModal(favorite.id)">
+                        <fa-icon [icon]="['fas', 'info-circle']" size="xs"></fa-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body text-primary">
+                <h5>{{favorite.repoFullName}}</h5>
+            </div>
+        </div>
+    </div>
+
+
+</div>

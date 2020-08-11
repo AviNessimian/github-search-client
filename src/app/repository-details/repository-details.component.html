@@ -1,0 +1,195 @@
+<section>
+    <h5>General</h5>
+    <div class="row">
+        <div class="col-lg-3">
+            <div>
+                <label class="badge badge-dark">Name:</label>
+                <span class="badge badge-info  ml-1">{{model.full_name}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Language:</label>
+                <span class="badge badge-info  ml-1">{{model.language}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Default Branch:</label>
+                <span class="badge badge-info  ml-1">{{model.default_branch}}</span>
+            </div>
+
+            <hr />
+
+            <div class="mt-2 mb-2">
+                <label class="badge badge-dark">Description:</label>
+                <textarea class="form-control" rows="3"> {{model.description}} </textarea>
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+            <div>
+                <label class="badge badge-dark">Private:</label>
+                <span class="badge badge-info  ml-1">{{model.private}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Fork:</label>
+                <span class="badge badge-info  ml-1">{{model.fork}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Has Downloads:</label>
+                <span class="badge badge-info  ml-1">{{model.has_downloads}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Has Wiki:</label>
+                <span class="badge badge-info  ml-1">{{model.has_wiki}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Disabled:</label>
+                <span class="badge badge-info  ml-1">{{model.disabled}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Archived:</label>
+                <span class="badge badge-info  ml-1">{{model.archived}}</span>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div>
+                <label class="badge badge-dark">Homepage:</label>
+                <a class="badge badge-info  ml-1">{{model.homepage}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Url:</label>
+                <a class="badge badge-info  ml-1">{{model.url}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Html Url:</label>
+                <a class="badge badge-info  ml-1">{{model.html_url}}</a>
+            </div>
+            <div>
+                <label class="badge badge-dark">Forks Url:</label>
+                <a class="badge badge-info  ml-1">{{model.forks_url}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Comments Url:</label>
+                <a class="badge badge-info  ml-1">{{model.comments_url}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Git Url:</label>
+                <a class="badge badge-info  ml-1">{{model.git_url}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Clone Url:</label>
+                <a class="badge badge-info  ml-1">{{model.clone_url}}</a>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+
+            <div>
+                <label class="badge badge-dark">Created At:</label>
+                <span class="badge badge-info  ml-1">{{model.created_at | date:'fullDate'}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Updated At:</label>
+                <span class="badge badge-info  ml-1">{{model.updated_at | date:'fullDate'}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Pushed At:</label>
+                <span class="badge badge-info  ml-1">{{model.pushed_at | date:'fullDate'}}</span>
+            </div>
+            <hr />
+            <div class="mt-2">
+                <label class="badge badge-dark">Score:</label>
+                <span class="badge badge-info  ml-1">{{model.score}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Size:</label>
+                <span class="badge badge-info  ml-1">{{model.size}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Watchers:</label>
+                <span class="badge badge-info  ml-1">{{model.watchers_count}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Forks :</label>
+                <span class="badge badge-info  ml-1">{{model.forks_count}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Open Issues:</label>
+                <span class="badge badge-info  ml-1">{{model.open_issues_count}}</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-lg-6" *ngIf="model.owner">
+            <h5>Owner</h5>
+            <div>
+                <label class="badge badge-dark">Login:</label>
+                <span class="badge badge-info ml-1">{{model.owner.login}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Type:</label>
+                <span class="badge badge-info ml-1">{{model.owner.type}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Avatar Url:</label>
+                <a class="badge badge-info ml-1">{{model.owner.avatar_url}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Url:</label>
+                <a class="badge badge-info ml-1">{{model.owner.url}}</a>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Repos Url:</label>
+                <a class="badge badge-info ml-1">{{model.owner.repos_url}}</a>
+            </div>
+        </div>
+
+        <div class="col-lg-6" *ngIf="model.license">
+            <h5>License</h5>
+            <div>
+                <label class="badge badge-dark">key:</label>
+                <span class="badge badge-info ml-1">{{model.license.key}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">Name:</label>
+                <span class="badge badge-info ml-1">{{model.license.name}}</span>
+            </div>
+
+            <div>
+                <label class="badge badge-dark">url:</label>
+                <a class="badge badge-info ml-1">{{model.license.url}}</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <pre>{{ model | json }}</pre> -->
+
+</section>

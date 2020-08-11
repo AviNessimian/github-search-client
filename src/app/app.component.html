@@ -1,0 +1,42 @@
+<h1 *ngIf="!init" class="centered">
+  <fa-icon [icon]="['fas', 'spinner']" [spin]="true" size="2x"></fa-icon>
+</h1>
+
+
+<article *ngIf="init" class="animated fadeIn">
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand bg-primary col-sm-3 col-md-2 mr-0" href="#">
+      <fa-icon [icon]="['fab', 'github']"></fa-icon>
+      Search Engine
+    </a>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item text-nowrap">
+        
+          <span class="text-info ml-3">
+            <fa-icon [icon]="['far', 'user']"></fa-icon>
+            Hi {{userName}}
+          </span>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <button class="btn btn-primary btn-sm float-right" (click)="signout()">
+          <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+          Sign out
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <app-sidebar></app-sidebar>
+
+      <main id="main" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+</article>

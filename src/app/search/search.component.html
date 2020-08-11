@@ -1,0 +1,52 @@
+<article class="animated fadeIn">
+    <section class="row justify-content-md-center">
+        <div class="col-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <fa-icon *ngIf="!searching" [icon]="['fas', 'search']"></fa-icon>
+                        <fa-icon *ngIf="searching" [icon]="['fas', 'spinner']" [spin]="true"></fa-icon>
+                    </span>
+                </div>
+
+                <input type="text" class="form-control" placeholder="Search for repositories" [(ngModel)]="model"
+                    (selectItem)="itemSelected($event)" [resultFormatter]="formatter" [inputFormatter]="formatter"
+                    [ngbTypeahead]="search" [resultTemplate]="rt" />
+
+                <!-- <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div> -->
+
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary" (click)="orderby()" placement="left" ngbTooltip="Sort">
+                        <fa-icon *ngIf="searchOrder === 'desc'" [icon]="['fas', 'sort-alpha-up']"></fa-icon>
+                        <fa-icon *ngIf="searchOrder === 'asc'" [icon]="['fas', 'sort-alpha-down']"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row mt-3" *ngIf="model !== null && model?.id !== undefined && isFavorite !== null">
+        <div class="col-12">
+            <div class="card border-primary">
+                <div class="card-header">
+                    <div class="float-right">
+                        <div class="pointer" placement="left" ngbTooltip="{{isFavorite === false ? 'Add to favorites' : 'Remove to favorites'}}" (click)="bookmark()">
+                            <fa-icon *ngIf="isFavorite === true" [icon]="['fas', 'bookmark']" size="2x"></fa-icon>
+                            <fa-icon *ngIf="isFavorite === false" [icon]="['far', 'bookmark']" size="2x"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body text-primary">
+                    <app-repository-details [model]="model"></app-repository-details>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+</article>
+
+<ng-template #rt let-r="result" let-t="term">
+    <ngb-highlight [result]="r.full_name" [term]="t"></ngb-highlight>
+</ng-template>
