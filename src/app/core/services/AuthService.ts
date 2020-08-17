@@ -29,7 +29,7 @@ export class AuthService {
       // automaticSilentRenew: true,
       // silent_redirect_uri: `${_appSettingsSrc.appSettings.clientRoot}assets/silent-redirect.html`
       //silent_redirect_uri: "http://localhost:4200/assets/silent-redirect.html"
-    };
+    } as UserManagerSettings;
 
     this._userManager = new UserManager(this._config);
 
