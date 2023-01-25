@@ -1,5 +1,7 @@
 # github-search-client-app
 
+##### [Go To Assessment](/Docs/fullstack-exercise.md)
+
 ##### [Go To Github Search Server](https://github.com/AviNessimian/GithubSearch "GithubSearch")
 ___
 
