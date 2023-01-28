@@ -22,11 +22,6 @@ ___
 
 **(scss/sass/css - BONUS - optional) use a theme or any styles you would like to add as a new touch to your search engine.**
   
-___
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
-___
-
 ## Screenshot
 ![Screenshot](Capture1.PNG)
 
@@ -35,4 +30,12 @@ ___
 
 ## Development server
 
+___
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+___
+
+___
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+___
+
